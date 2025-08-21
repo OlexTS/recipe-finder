@@ -1,0 +1,15 @@
+export interface Recipe {
+  id: number;
+  title: string;
+  image: string;
+  readyInMinutes: number;
+  servings: number;
+  dishTypes: string[];
+  summary?: string;
+  sourceUrl?: string;
+  extendedIngredients?: { id: number; original: string }[];
+  analyzedInstructions?: {
+    name: string;
+    steps: { number: number; step: string }[];
+  }[];
+}
