@@ -25,11 +25,11 @@ export interface SearchRecipeHttpResponse {
   totalResults: number;
 }
 
-export const fetchRandomRecipes = async (): Promise<Recipe[]> => {
+export const fetchRandomRecipes = async (count: number): Promise<{recipes: Recipe[], totalResults: number}> => {
   const { data } = await recipeApi.get<RandomRecipeHttpResponse>("random", {
-    params: { number: 10 },
+    params: { number: count },
   });
-  return data.recipes;
+  return {recipes:data.recipes, totalResults: data.recipes.length};
 };
 
 export const fetchRecipesByQuery = async (
