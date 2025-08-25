@@ -32,15 +32,20 @@ function App() {
   const recipes = data?.recipes ?? [];
   const totalResults = data?.totalResults ?? 0;
 
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value);
+  const handleSearchChange = (query: string) => {
+    setSearchQuery(query);
     setPage(1);
   };
   return (
     <>
-      <SearchBox value={searchQuery} onChange={handleSearchChange} />
-      {totalResults > 1 && (
-        <Pagination totalResults={totalResults} setPage={setPage} page={page} />
+      <SearchBox onSubmit={handleSearchChange} />
+      {totalResults <= PAGE_SIZE && (
+        <Pagination
+          totalResults={totalResults}
+          setPage={setPage}
+          page={page}
+          pageSize={PAGE_SIZE}
+        />
       )}
       {isLoading && "Loading..."}
       {isError ? (

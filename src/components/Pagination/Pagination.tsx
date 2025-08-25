@@ -4,13 +4,15 @@ import css from './Pagination.module.css'
 interface PaginationProps {
 totalResults: number;
 setPage: (page: number)=>void;
-page: number
+page: number;
+pageSize: number;
 }
 
-const Pagination = ({totalResults, setPage, page}: PaginationProps) => {
+const Pagination = ({totalResults, setPage, page, pageSize}: PaginationProps) => {
+	const pageCount = Math.ceil(totalResults/pageSize)
   return (
     <ReactPaginate
-	pageCount={totalResults}
+	pageCount={pageCount}
 	pageRangeDisplayed={5}
 	marginPagesDisplayed={1}
 	onPageChange={({ selected }) => setPage(selected + 1)}

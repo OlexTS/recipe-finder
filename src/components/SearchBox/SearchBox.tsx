@@ -1,13 +1,26 @@
+import { useState } from "react";
 
 interface SearchBoxProps {
-    value: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onSubmit: (query: string) => void;
 }
 
-const SearchBox = ({ value, onChange }: SearchBoxProps) => {
-    return (
-        <input type="text" value={value} onChange={onChange} placeholder="Enter recipe" />
-    )
-}
+const SearchBox = ({ onSubmit }: SearchBoxProps) => {
+  const [inputValue, setInputValue] = useState<string>("");
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onSubmit(inputValue.trim());
+  };
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        placeholder="Enter recipe"
+      />
+      <button type="submit">Search</button>
+    </form>
+  );
+};
 
-export default SearchBox
+export default SearchBox;

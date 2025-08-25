@@ -3,7 +3,6 @@ import type { Recipe } from "../../types/recipe";
 interface RecipesListProps {
   recipes: Recipe[];
 }
-
 const RecipesList = ({ recipes }: RecipesListProps) => {
   return (
     <ul>
