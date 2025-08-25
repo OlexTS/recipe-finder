@@ -2,8 +2,9 @@ import type { Recipe } from "../../types/recipe";
 
 interface RecipesListProps {
   recipes: Recipe[];
+  onModalOpen: () => void;
 }
-const RecipesList = ({ recipes }: RecipesListProps) => {
+const RecipesList = ({ recipes, onModalOpen}: RecipesListProps) => {
   return (
     <ul>
       {recipes.map((recipe) => (
@@ -20,6 +21,9 @@ const RecipesList = ({ recipes }: RecipesListProps) => {
               </li>
             ))}
           </ul>
+          <button type="button" onClick={onModalOpen}>
+            View details
+          </button>
         </li>
       ))}
     </ul>
