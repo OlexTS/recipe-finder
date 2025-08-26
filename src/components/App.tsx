@@ -9,15 +9,12 @@ import {
 import RecipesList from "./RecipesList/RecipesList";
 import type { Recipe } from "../types/recipe";
 import Pagination from "./Pagination/Pagination";
-import Modal from "./Modal/Modal";
-import RecipesItem from "./RecipesItem/RecipesItem";
 
 const PAGE_SIZE = 10;
 
 function App() {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [page, setPage] = useState<number>(1);
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const { data, isLoading, isError } = useQuery<{
     recipes: Recipe[];
@@ -40,12 +37,6 @@ function App() {
     setPage(1);
   };
 
-  const handleModalOpen = () => {
-    setIsModalOpen(true);
-  };
-  const handleModalClose = () => {
-    setIsModalOpen(false);
-  };
   return (
     <>
       <SearchBox onSubmit={handleSearchChange} />
@@ -61,13 +52,9 @@ function App() {
       {isError ? (
         "Something went wrong, please try again"
       ) : (
-        <RecipesList recipes={recipes} onModalOpen={handleModalOpen} />
+        <RecipesList recipes={recipes} />
       )}
-      {isModalOpen && (
-        <Modal onClose={handleModalClose}>
-          <RecipesItem />
-        </Modal>
-      )}
+
       <Toaster />
     </>
   );

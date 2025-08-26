@@ -1,10 +1,21 @@
+import { useState } from "react";
 import type { Recipe } from "../../types/recipe";
+import Modal from "../Modal/Modal";
+import RecipesItem from "../RecipesItem/RecipesItem";
+
 
 interface RecipesListProps {
   recipes: Recipe[];
-  onModalOpen: () => void;
 }
-const RecipesList = ({ recipes, onModalOpen}: RecipesListProps) => {
+const RecipesList = ({ recipes }: RecipesListProps) => {
+  const [selectedRecipeId, setSelectedRecipeId] = useState<number | null>(null);
+  
+  const handleModalOpen = (id: number) => {
+    setSelectedRecipeId(id);
+  };
+  const handleModalClose = () => {
+    setSelectedRecipeId(null);
+  };
   return (
     <ul>
       {recipes.map((recipe) => (
@@ -21,9 +32,14 @@ const RecipesList = ({ recipes, onModalOpen}: RecipesListProps) => {
               </li>
             ))}
           </ul>
-          <button type="button" onClick={onModalOpen}>
+          <button type="button" onClick={()=>handleModalOpen(recipe.id)}>
             View details
           </button>
+          {selectedRecipeId && (
+            <Modal onClose={handleModalClose}>
+              <RecipesItem recipeId={selectedRecipeId} onClose={handleModalClose}/>
+            </Modal>
+          )}
         </li>
       ))}
     </ul>
