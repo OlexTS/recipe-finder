@@ -22,13 +22,18 @@ const Modal = ({ children, onClose }: ModalProps) => {
       document.body.style.overflow = "";
     };
   }, [onClose]);
-  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>)=>{
-    if(e.target === e.currentTarget){
-onClose()
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClose();
     }
-  }
+  };
   return createPortal(
-    <div onClick={handleBackdropClick} className={css.backdrop} role="dialog" aria-modal="true">
+    <div
+      onClick={handleBackdropClick}
+      className={css.backdrop}
+      role="dialog"
+      aria-modal="true"
+    >
       <div className={css.modal}>{children}</div>
     </div>,
     modalRef

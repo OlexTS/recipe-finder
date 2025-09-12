@@ -25,11 +25,22 @@ export interface SearchRecipeHttpResponse {
   totalResults: number;
 }
 
-export const fetchRandomRecipes = async (count: number): Promise<{recipes: Recipe[], totalResults: number}> => {
-  const { data } = await recipeApi.get<RandomRecipeHttpResponse>("random", {
-    params: { number: count },
-  });
-  return {recipes:data.recipes, totalResults: data.recipes.length};
+export const fetchRandomRecipes = async (
+  count: number
+): Promise<{ recipes: Recipe[]; totalResults: number }> => {
+  try {
+    const { data } = await recipeApi.get<RandomRecipeHttpResponse>("random", {
+      params: { number: count },
+    });
+    return { recipes: data.recipes, totalResults: data.recipes.length };
+  } catch (error: unknown) {
+    if (axios.isAxiosError(error) && error.response?.status === 402) {
+      const response = await fetch("../../public/mochRecipes.json");
+      const recipes: Recipe[] = await response.json();
+      return { recipes, totalResults: recipes.length };
+    }
+    throw error;
+  }
 };
 
 export const fetchRecipesByQuery = async (
@@ -50,4 +61,9 @@ export const fetchRecipesByQuery = async (
 export const fetchRecipeById = async (id: number): Promise<Recipe> => {
   const { data } = await recipeApi.get(`${id}/information`);
   return data;
+};
+
+export const fetchMochRecipes = async () => {
+  const response = await fetch("./mochRecipes.json");
+  return response.json();
 };

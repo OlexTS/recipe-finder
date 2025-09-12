@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { Recipe } from "../../types/recipe";
 import Modal from "../Modal/Modal";
 import RecipesItem from "../RecipesItem/RecipesItem";
-
+import css from './RecipesList.module.css'
 
 interface RecipesListProps {
   recipes: Recipe[];
@@ -17,7 +17,7 @@ const RecipesList = ({ recipes }: RecipesListProps) => {
     setSelectedRecipeId(null);
   };
   return (
-    <ul>
+    <ul className={css.list}>
       {recipes.map((recipe) => (
         <li key={recipe.id}>
           <h2>{recipe.title}</h2>
