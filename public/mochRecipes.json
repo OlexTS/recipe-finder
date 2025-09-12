@@ -2,7 +2,7 @@
     {
       "id": 1,
       "title": "Mock Pizza Margherita",
-      "image": "https://via.placeholder.com/300x200.png?text=Pizza",
+      "image": "https://www.wellplated.com/wp-content/uploads/2023/03/Best-Arugula-Salad.jpg",
       "readyInMinutes": 25,
       "servings": 2,
       "dishTypes": ["main course"],
@@ -27,7 +27,223 @@
     {
       "id": 2,
       "title": "Mock Caesar Salad",
-      "image": "https://via.placeholder.com/300x200.png?text=Salad",
+      "image": "https://www.wellplated.com/wp-content/uploads/2023/03/Best-Arugula-Salad.jpg",
+      "readyInMinutes": 10,
+      "servings": 1,
+      "dishTypes": ["salad", "side dish"],
+      "summary": "A fresh mock Caesar salad with lettuce and croutons.",
+      "sourceUrl": "https://example.com/mock-salad",
+      "extendedIngredients": [
+        { "id": 201, "original": "100g lettuce" },
+        { "id": 202, "original": "50g croutons" },
+        { "id": 203, "original": "20g parmesan" }
+      ],
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Chop lettuce." },
+            { "number": 2, "step": "Add croutons and cheese." },
+            { "number": 3, "step": "Toss with dressing." }
+          ]
+        }
+      ]
+    },{
+      "id": 3,
+      "title": "Mock Caesar Salad",
+      "image": "https://www.wellplated.com/wp-content/uploads/2023/03/Best-Arugula-Salad.jpg",
+      "readyInMinutes": 10,
+      "servings": 1,
+      "dishTypes": ["salad", "side dish"],
+      "summary": "A fresh mock Caesar salad with lettuce and croutons.",
+      "sourceUrl": "https://example.com/mock-salad",
+      "extendedIngredients": [
+        { "id": 201, "original": "100g lettuce" },
+        { "id": 202, "original": "50g croutons" },
+        { "id": 203, "original": "20g parmesan" }
+      ],
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Chop lettuce." },
+            { "number": 2, "step": "Add croutons and cheese." },
+            { "number": 3, "step": "Toss with dressing." }
+          ]
+        }
+      ]
+    },{
+      "id": 4,
+      "title": "Mock Caesar Salad",
+      "image": "https://www.wellplated.com/wp-content/uploads/2023/03/Best-Arugula-Salad.jpg",
+      "readyInMinutes": 10,
+      "servings": 1,
+      "dishTypes": ["salad", "side dish"],
+      "summary": "A fresh mock Caesar salad with lettuce and croutons.",
+      "sourceUrl": "https://example.com/mock-salad",
+      "extendedIngredients": [
+        { "id": 201, "original": "100g lettuce" },
+        { "id": 202, "original": "50g croutons" },
+        { "id": 203, "original": "20g parmesan" }
+      ],
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Chop lettuce." },
+            { "number": 2, "step": "Add croutons and cheese." },
+            { "number": 3, "step": "Toss with dressing." }
+          ]
+        }
+      ]
+    },{
+      "id": 5,
+      "title": "Mock Caesar Salad",
+      "image": "https://www.wellplated.com/wp-content/uploads/2023/03/Best-Arugula-Salad.jpg",
+      "readyInMinutes": 10,
+      "servings": 1,
+      "dishTypes": ["salad", "side dish"],
+      "summary": "A fresh mock Caesar salad with lettuce and croutons.",
+      "sourceUrl": "https://example.com/mock-salad",
+      "extendedIngredients": [
+        { "id": 201, "original": "100g lettuce" },
+        { "id": 202, "original": "50g croutons" },
+        { "id": 203, "original": "20g parmesan" }
+      ],
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Chop lettuce." },
+            { "number": 2, "step": "Add croutons and cheese." },
+            { "number": 3, "step": "Toss with dressing." }
+          ]
+        }
+      ]
+    },{
+      "id": 6,
+      "title": "Mock Caesar Salad",
+      "image": "https://www.wellplated.com/wp-content/uploads/2023/03/Best-Arugula-Salad.jpg",
+      "readyInMinutes": 10,
+      "servings": 1,
+      "dishTypes": ["salad", "side dish"],
+      "summary": "A fresh mock Caesar salad with lettuce and croutons.",
+      "sourceUrl": "https://example.com/mock-salad",
+      "extendedIngredients": [
+        { "id": 201, "original": "100g lettuce" },
+        { "id": 202, "original": "50g croutons" },
+        { "id": 203, "original": "20g parmesan" }
+      ],
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Chop lettuce." },
+            { "number": 2, "step": "Add croutons and cheese." },
+            { "number": 3, "step": "Toss with dressing." }
+          ]
+        }
+      ]
+    },{
+      "id": 7,
+      "title": "Mock Caesar Salad",
+      "image": "https://www.wellplated.com/wp-content/uploads/2023/03/Best-Arugula-Salad.jpg",
+      "readyInMinutes": 10,
+      "servings": 1,
+      "dishTypes": ["salad", "side dish"],
+      "summary": "A fresh mock Caesar salad with lettuce and croutons.",
+      "sourceUrl": "https://example.com/mock-salad",
+      "extendedIngredients": [
+        { "id": 201, "original": "100g lettuce" },
+        { "id": 202, "original": "50g croutons" },
+        { "id": 203, "original": "20g parmesan" }
+      ],
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Chop lettuce." },
+            { "number": 2, "step": "Add croutons and cheese." },
+            { "number": 3, "step": "Toss with dressing." }
+          ]
+        }
+      ]
+    },{
+      "id": 8,
+      "title": "Mock Caesar Salad",
+      "image": "https://www.wellplated.com/wp-content/uploads/2023/03/Best-Arugula-Salad.jpg",
+      "readyInMinutes": 10,
+      "servings": 1,
+      "dishTypes": ["salad", "side dish"],
+      "summary": "A fresh mock Caesar salad with lettuce and croutons.",
+      "sourceUrl": "https://example.com/mock-salad",
+      "extendedIngredients": [
+        { "id": 201, "original": "100g lettuce" },
+        { "id": 202, "original": "50g croutons" },
+        { "id": 203, "original": "20g parmesan" }
+      ],
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Chop lettuce." },
+            { "number": 2, "step": "Add croutons and cheese." },
+            { "number": 3, "step": "Toss with dressing." }
+          ]
+        }
+      ]
+    },{
+      "id": 9,
+      "title": "Mock Caesar Salad",
+      "image": "https://www.wellplated.com/wp-content/uploads/2023/03/Best-Arugula-Salad.jpg",
+      "readyInMinutes": 10,
+      "servings": 1,
+      "dishTypes": ["salad", "side dish"],
+      "summary": "A fresh mock Caesar salad with lettuce and croutons.",
+      "sourceUrl": "https://example.com/mock-salad",
+      "extendedIngredients": [
+        { "id": 201, "original": "100g lettuce" },
+        { "id": 202, "original": "50g croutons" },
+        { "id": 203, "original": "20g parmesan" }
+      ],
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Chop lettuce." },
+            { "number": 2, "step": "Add croutons and cheese." },
+            { "number": 3, "step": "Toss with dressing." }
+          ]
+        }
+      ]
+    },{
+      "id": 10,
+      "title": "Mock Caesar Salad",
+      "image": "https://www.wellplated.com/wp-content/uploads/2023/03/Best-Arugula-Salad.jpg",
+      "readyInMinutes": 10,
+      "servings": 1,
+      "dishTypes": ["salad", "side dish"],
+      "summary": "A fresh mock Caesar salad with lettuce and croutons.",
+      "sourceUrl": "https://example.com/mock-salad",
+      "extendedIngredients": [
+        { "id": 201, "original": "100g lettuce" },
+        { "id": 202, "original": "50g croutons" },
+        { "id": 203, "original": "20g parmesan" }
+      ],
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            { "number": 1, "step": "Chop lettuce." },
+            { "number": 2, "step": "Add croutons and cheese." },
+            { "number": 3, "step": "Toss with dressing." }
+          ]
+        }
+      ]
+    },{
+      "id": 11,
+      "title": "Mock Caesar Salad",
+      "image": "https://www.wellplated.com/wp-content/uploads/2023/03/Best-Arugula-Salad.jpg",
       "readyInMinutes": 10,
       "servings": 1,
       "dishTypes": ["salad", "side dish"],

@@ -21,7 +21,7 @@ const RecipesList = ({ recipes }: RecipesListProps) => {
       {recipes.map((recipe) => (
         <li key={recipe.id}>
           <h2>{recipe.title}</h2>
-          <img src={recipe.image} />
+          <img src={recipe.image} width={320}/>
           <p>Ready in minutes: {recipe.readyInMinutes}</p>
           <p>Servings: {recipe.servings}</p>
           <ul>
