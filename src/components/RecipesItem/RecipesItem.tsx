@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchRecipeById } from "../../services/recipeService";
 import toast from "react-hot-toast";
-import css from './RecipesItem.module.css'
+import css from "./RecipesItem.module.css";
+import defaultImage from "../../assets/noimage.jpg";
 
 interface RecipesItemProps {
   recipeId: number;
@@ -16,13 +17,12 @@ const RecipesItem = ({ recipeId, onClose }: RecipesItemProps) => {
   if (isLoading) return <p>Loading...</p>;
   if (isError) return toast.error("Error loading recipe.");
   if (!data) return null;
-  console.log(data);
 
   return (
     <div className={css.container}>
       <div>
         <h2>{data.title}</h2>
-        <img src={data.image} alt={data.title} />
+        <img src={data.image || defaultImage} alt={data.title} />
       </div>
       <div>
         <h3>Ingredients: </h3>
@@ -38,9 +38,9 @@ const RecipesItem = ({ recipeId, onClose }: RecipesItemProps) => {
           ))}
         </ol>
       </div>
-        <button type="button" onClick={onClose}>
-          Close
-        </button>
+      <button type="button" onClick={onClose}>
+        Close
+      </button>
     </div>
   );
 };

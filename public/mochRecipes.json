@@ -2,7 +2,7 @@
     {
       "id": 1,
       "title": "Mock Pizza Margherita",
-      "image": "https://www.wellplated.com/wp-content/uploads/2023/03/Best-Arugula-Salad.jpg",
+      "image": "",
       "readyInMinutes": 25,
       "servings": 2,
       "dishTypes": ["main course"],

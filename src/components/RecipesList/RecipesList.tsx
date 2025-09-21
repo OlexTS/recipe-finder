@@ -2,7 +2,8 @@ import { useState } from "react";
 import type { Recipe } from "../../types/recipe";
 import Modal from "../Modal/Modal";
 import RecipesItem from "../RecipesItem/RecipesItem";
-import css from './RecipesList.module.css'
+import css from './RecipesList.module.css';
+import defaultImage from "../../assets/noimage.jpg";
 
 interface RecipesListProps {
   recipes: Recipe[];
@@ -21,7 +22,7 @@ const RecipesList = ({ recipes }: RecipesListProps) => {
       {recipes.map((recipe) => (
         <li key={recipe.id}>
           <h2>{recipe.title}</h2>
-          <img src={recipe.image} width={320}/>
+          <img src={recipe.image || defaultImage} width={320} alt={recipe.title} />
           <p>Ready in minutes: {recipe.readyInMinutes}</p>
           <p>Servings: {recipe.servings}</p>
           <ul>

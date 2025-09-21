@@ -35,7 +35,7 @@ export const fetchRandomRecipes = async (
     return { recipes: data.recipes, totalResults: data.recipes.length };
   } catch (error: unknown) {
     if (axios.isAxiosError(error) && error.response?.status === 402) {
-      const response = await fetch("../../public/mochRecipes.json");
+      const response = await fetch("/mochRecipes.json");
       const recipes: Recipe[] = await response.json();
       return { recipes, totalResults: recipes.length };
     }
@@ -63,7 +63,4 @@ export const fetchRecipeById = async (id: number): Promise<Recipe> => {
   return data;
 };
 
-export const fetchMochRecipes = async () => {
-  const response = await fetch("./mochRecipes.json");
-  return response.json();
-};
+
