@@ -8,6 +8,7 @@ export interface Recipe {
   summary?: string;
   sourceUrl?: string;
   extendedIngredients?: { id: number; original: string }[];
+  imageType?: string,
   analyzedInstructions?: {
     name: string;
     steps: { number: number; step: string }[];

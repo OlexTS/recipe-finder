@@ -22,7 +22,7 @@ const RecipesItem = ({ recipeId, onClose }: RecipesItemProps) => {
     <div className={css.container}>
       <div>
         <h2>{data.title}</h2>
-        <img src={data.image || defaultImage} alt={data.title} />
+        <img src={data.image && data.imageType ? data.image : defaultImage} alt={data.title} width={320}/>
       </div>
       <div>
         <h3>Ingredients: </h3>

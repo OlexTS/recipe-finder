@@ -26,7 +26,7 @@ const RecipesList = ({ recipes }: RecipesListProps) => {
         <li key={recipe.id}>
           <h2>{recipe.title}</h2>
           <img
-            src={recipe.image || defaultImage}
+            src={recipe.image && recipe.imageType ? recipe.image : defaultImage}
             width={320}
             alt={recipe.title}
           />
