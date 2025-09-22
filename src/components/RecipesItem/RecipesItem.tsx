@@ -3,13 +3,14 @@ import { fetchRecipeById } from "../../services/recipeService";
 import toast from "react-hot-toast";
 import css from "./RecipesItem.module.css";
 import defaultImage from "../../assets/noimage.jpg";
+import { useNavigate } from "react-router";
 
 interface RecipesItemProps {
   recipeId: number;
-  onClose: () => void;
 }
 
-const RecipesItem = ({ recipeId, onClose }: RecipesItemProps) => {
+const RecipesItem = ({ recipeId }: RecipesItemProps) => {
+  const navigate = useNavigate()
   const { data, isLoading, isError } = useQuery({
     queryKey: ["recipe", recipeId],
     queryFn: () => fetchRecipeById(recipeId),
@@ -38,8 +39,8 @@ const RecipesItem = ({ recipeId, onClose }: RecipesItemProps) => {
           ))}
         </ol>
       </div>
-      <button type="button" onClick={onClose}>
-        Close
+      <button type="button" onClick={()=>navigate(-1)}>
+        Go back
       </button>
     </div>
   );

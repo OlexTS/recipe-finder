@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 
 export const FavoritesProvider = ({ children }: { children: ReactNode }) => {
   const [favorites, setFavorites] = useState<Recipe[]>([]);
+  
   useEffect(() => {
     const saved = localStorage.getItem("favorites");
     if (saved) {

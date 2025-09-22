@@ -6,6 +6,7 @@ import RecipesItem from "../RecipesItem/RecipesItem";
 import css from "./RecipesList.module.css";
 import defaultImage from "../../assets/noimage.jpg";
 import { useFavorites } from "../../helpers/useFavorites";
+import { Link } from "react-router";
 
 interface RecipesListProps {
   recipes: Recipe[];
@@ -41,7 +42,7 @@ const RecipesList = ({ recipes }: RecipesListProps) => {
             ))}
           </ul>
           <button type="button" onClick={() => handleModalOpen(recipe.id)}>
-            View details
+            <Link to={`/recipes/${recipe.id}`}>View details</Link>
           </button>
           <button
             type="button"
@@ -59,7 +60,7 @@ const RecipesList = ({ recipes }: RecipesListProps) => {
             <Modal onClose={handleModalClose}>
               <RecipesItem
                 recipeId={selectedRecipeId}
-                onClose={handleModalClose}
+                
               />
             </Modal>
           )}
