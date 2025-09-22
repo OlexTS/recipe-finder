@@ -1,16 +1,19 @@
 import { useState } from "react";
+import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import type { Recipe } from "../../types/recipe";
 import Modal from "../Modal/Modal";
 import RecipesItem from "../RecipesItem/RecipesItem";
-import css from './RecipesList.module.css';
+import css from "./RecipesList.module.css";
 import defaultImage from "../../assets/noimage.jpg";
+import { useFavorites } from "../../helpers/useFavorites";
 
 interface RecipesListProps {
   recipes: Recipe[];
 }
 const RecipesList = ({ recipes }: RecipesListProps) => {
   const [selectedRecipeId, setSelectedRecipeId] = useState<number | null>(null);
-  
+  const { addFavorite, removeFromFavorite, isFavorite } = useFavorites();
+
   const handleModalOpen = (id: number) => {
     setSelectedRecipeId(id);
   };
@@ -22,7 +25,11 @@ const RecipesList = ({ recipes }: RecipesListProps) => {
       {recipes.map((recipe) => (
         <li key={recipe.id}>
           <h2>{recipe.title}</h2>
-          <img src={recipe.image || defaultImage} width={320} alt={recipe.title} />
+          <img
+            src={recipe.image || defaultImage}
+            width={320}
+            alt={recipe.title}
+          />
           <p>Ready in minutes: {recipe.readyInMinutes}</p>
           <p>Servings: {recipe.servings}</p>
           <ul>
@@ -33,12 +40,27 @@ const RecipesList = ({ recipes }: RecipesListProps) => {
               </li>
             ))}
           </ul>
-          <button type="button" onClick={()=>handleModalOpen(recipe.id)}>
+          <button type="button" onClick={() => handleModalOpen(recipe.id)}>
             View details
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              if (isFavorite(recipe.id)) {
+                removeFromFavorite(recipe.id);
+              } else {
+                addFavorite(recipe);
+              }
+            }}
+          >
+            {isFavorite(recipe.id) ? <MdFavorite /> : <MdFavoriteBorder />}
           </button>
           {selectedRecipeId && (
             <Modal onClose={handleModalClose}>
-              <RecipesItem recipeId={selectedRecipeId} onClose={handleModalClose}/>
+              <RecipesItem
+                recipeId={selectedRecipeId}
+                onClose={handleModalClose}
+              />
             </Modal>
           )}
         </li>

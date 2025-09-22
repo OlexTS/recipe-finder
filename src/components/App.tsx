@@ -4,6 +4,7 @@ import HomePage from "../pages/HomePage";
 import FavoritePage from "../pages/FavoritePage";
 import RecipeDetailsPage from "../pages/RecipeDetailsPage";
 
+
 function App() {
   return (
     <>
