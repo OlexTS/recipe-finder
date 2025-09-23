@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { FaShareAlt } from "react-icons/fa";
 import { fetchRecipeById } from "../../services/recipeService";
 import toast from "react-hot-toast";
 import css from "./RecipesItem.module.css";
@@ -7,9 +8,10 @@ import { useNavigate } from "react-router";
 
 interface RecipesItemProps {
   recipeId: number;
+  onShare: (id: number)=>void
 }
 
-const RecipesItem = ({ recipeId }: RecipesItemProps) => {
+const RecipesItem = ({ recipeId, onShare }: RecipesItemProps) => {
   const navigate = useNavigate()
   const { data, isLoading, isError } = useQuery({
     queryKey: ["recipe", recipeId],
@@ -39,6 +41,7 @@ const RecipesItem = ({ recipeId }: RecipesItemProps) => {
           ))}
         </ol>
       </div>
+      <button onClick={()=>onShare(recipeId)}><FaShareAlt/></button>
       <button type="button" onClick={()=>navigate(-1)}>
         Go back
       </button>

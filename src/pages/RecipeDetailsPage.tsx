@@ -9,8 +9,18 @@ const RecipeDetailsPage = () => {
     if(!isAsNumber){
         return <div>Invalid recipe ID</div>
     }
+
+    const handleShare = (id: number)=>{
+      const url = `${window.location.origin}/recipes/${id}`
+      if(navigator.share){
+        navigator.share({title: 'Check out this recipe', url})
+      }else{
+        navigator.clipboard.writeText(url)
+        alert('Link copied to clipboard')
+      }
+    }
   return (
-    <div><RecipesItem recipeId={isAsNumber} /></div>
+    <div><RecipesItem recipeId={isAsNumber} onShare={handleShare}/></div>
   )
 }
 
