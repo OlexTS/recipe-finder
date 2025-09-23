@@ -63,4 +63,11 @@ export const fetchRecipeById = async (id: number): Promise<Recipe> => {
   return data;
 };
 
-
+export const fetchAuthocomplete = async (query: string)=> {
+  const {data} = await recipeApi.get('autocomplete', 
+    {
+      params: {query, number: 5}
+    }
+  )
+return data as {id: number, title: string}[]
+}
