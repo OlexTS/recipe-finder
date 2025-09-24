@@ -46,13 +46,20 @@ export const fetchRandomRecipes = async (
 export const fetchRecipesByQuery = async (
   query: string,
   page: number = 1,
-  pageSize: number = 10
+  pageSize: number = 10,
+  filters: {
+    type?: string,
+    maxReadyTime?: number,
+    diet?: string,
+    sort?: string
+  }
 ): Promise<{ recipes: Recipe[]; totalResults: number }> => {
   const offset = (page - 1) * pageSize;
+  console.log("Filters in request:", filters);
   const { data } = await recipeApi.get<SearchRecipeHttpResponse>(
     "complexSearch",
     {
-      params: { query, offset, number: pageSize, addRecipeInformation: true },
+      params: { query, offset, number: pageSize, addRecipeInformation: true, ...filters },
     }
   );
   return { recipes: data.results, totalResults: data.totalResults };
