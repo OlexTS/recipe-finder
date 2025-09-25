@@ -22,6 +22,11 @@ const Filters = ({ onChange }: FiltersProps) => {
       diet: diet || undefined,
       sort: sort || undefined,
     });
+    setType('')
+    setMaxReadyTime('')
+    setDiet('')
+    setSort('')
+    
   };
 
   return (

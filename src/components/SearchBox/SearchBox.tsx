@@ -23,6 +23,7 @@ const SearchBox = ({ onSubmit }: SearchBoxProps) => {
     e.preventDefault();
     onSubmit(inputValue.trim());
     setShowSuggestions(false);
+    
   };
 
   const handleSelect = (title: string) => {
@@ -66,7 +67,7 @@ const SearchBox = ({ onSubmit }: SearchBoxProps) => {
             <li
               key={s.id}
               style={{ padding: "8px", cursor: "pointer" }}
-              onClick={() => handleSelect(s.title)}
+              onClick={() => {handleSelect(s.title); setInputValue('')}}
             >
               {s.title}
             </li>

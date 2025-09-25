@@ -55,7 +55,7 @@ export const fetchRecipesByQuery = async (
   }
 ): Promise<{ recipes: Recipe[]; totalResults: number }> => {
   const offset = (page - 1) * pageSize;
-  console.log("Filters in request:", filters);
+  
   const { data } = await recipeApi.get<SearchRecipeHttpResponse>(
     "complexSearch",
     {
