@@ -30,7 +30,7 @@ export const fetchRandomRecipes = async (
 ): Promise<{ recipes: Recipe[]; totalResults: number }> => {
   try {
     const { data } = await recipeApi.get<RandomRecipeHttpResponse>("random", {
-      params: { number: count },
+      params: { number: count, includeNutrition: true },
     });
     return { recipes: data.recipes, totalResults: data.recipes.length };
   } catch (error: unknown) {
@@ -59,14 +59,14 @@ export const fetchRecipesByQuery = async (
   const { data } = await recipeApi.get<SearchRecipeHttpResponse>(
     "complexSearch",
     {
-      params: { query, offset, number: pageSize, addRecipeInformation: true, ...filters },
+      params: { query, offset, number: pageSize, addRecipeInformation: true, addRecipeNutrition: true, ...filters },
     }
   );
   return { recipes: data.results, totalResults: data.totalResults };
 };
 
 export const fetchRecipeById = async (id: number): Promise<Recipe> => {
-  const { data } = await recipeApi.get(`${id}/information`);
+  const { data } = await recipeApi.get(`${id}/information?includeNutrition=true`);
   return data;
 };
 

@@ -58,10 +58,7 @@ const RecipesList = ({ recipes }: RecipesListProps) => {
           </button>
           {selectedRecipeId && (
             <Modal onClose={handleModalClose}>
-              <RecipesItem
-                recipeId={selectedRecipeId}
-                
-              />
+              <RecipesItem recipeId={selectedRecipeId} />
             </Modal>
           )}
         </li>

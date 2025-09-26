@@ -10,7 +10,7 @@ interface RecipesItemProps {
 }
 
 const RecipesItem = ({ recipeId }: RecipesItemProps) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { data, isLoading, isError } = useQuery({
     queryKey: ["recipe", recipeId],
     queryFn: () => fetchRecipeById(recipeId),
@@ -23,7 +23,11 @@ const RecipesItem = ({ recipeId }: RecipesItemProps) => {
     <div className={css.container}>
       <div>
         <h2>{data.title}</h2>
-        <img src={data.image && data.imageType ? data.image : defaultImage} alt={data.title} width={320}/>
+        <img
+          src={data.image && data.imageType ? data.image : defaultImage}
+          alt={data.title}
+          width={320}
+        />
       </div>
       <div>
         <h3>Ingredients: </h3>
@@ -34,12 +38,25 @@ const RecipesItem = ({ recipeId }: RecipesItemProps) => {
         </ul>
         <h3>Instructions:</h3>
         <ol>
-          {data.analyzedInstructions?.[0]?.steps.map((step) => (
+          {data?.analyzedInstructions?.[0]?.steps.map((step) => (
             <li key={step.number}>{step.step}</li>
           ))}
         </ol>
+        <h3>Nutrition: </h3>
+        <ul>
+          {data?.nutrition?.nutrients
+            ?.filter((el) =>
+              ["Protein", "Fat", "Carbohydrates"].includes(el.name)
+            )
+            .map((nt, idx) => (
+              <li key={idx}>
+                <p>{nt.name}</p>
+                {nt.amount} {nt.unit}
+              </li>
+            ))}
+        </ul>
       </div>
-      <button type="button" onClick={()=>navigate(-1)}>
+      <button type="button" onClick={() => navigate(-1)}>
         Go back
       </button>
     </div>

@@ -13,4 +13,11 @@ export interface Recipe {
     name: string;
     steps: { number: number; step: string }[];
   }[];
+  nutrition?: {
+    nutrients: {
+      name: string,
+      amount: number,
+      unit: string,
+    }[]
+  }
 }
