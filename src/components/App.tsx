@@ -4,11 +4,13 @@ import HomePage from "../pages/HomePage";
 import FavoritePage from "../pages/FavoritePage";
 import RecipeDetailsPage from "../pages/RecipeDetailsPage";
 import Header from "./Header/Header";
+import Container from "./Container/Container";
 
 
 function App() {
   return (
-    <>
+    <Container>
+      <h1>My Recipes</h1>
     <Header/>
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -16,7 +18,7 @@ function App() {
         <Route path="/recipes/:id" element={<RecipeDetailsPage />} />
       </Routes>
       <Toaster />
-    </>
+    </Container>
   );
 }
 
