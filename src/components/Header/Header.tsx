@@ -10,21 +10,23 @@ const Header = () => {
   return (
     <header className={css.header}>
       <Link to="/">
-        <img className={css.logo} src={logo} alt="logo" width="150" />
+        <img className={css.logo} src={logo} alt="logo" />
       </Link>
-      <nav>
+      <div className={css.navContainer}>
+      <nav className={css.navigation}>
         <ul className={css.list}>
           <li>
-            <Link to="/">Home</Link>
+            <Link className={css.link} to="/">Home</Link>
           </li>
           <li>
-            <Link to="/favorite">Favorites</Link>
+            <Link className={css.link} to="/favorite">Favorites</Link>
           </li>
         </ul>
       </nav>
-      <button onClick={() => setMode(!mode)}>
-        {mode ? <MdDarkMode /> : <MdOutlineLightMode />}
+      <button onClick={() => setMode(!mode)} className={css.btn}>
+        {mode ? <MdDarkMode className={css.icon} size={30}/> : <MdOutlineLightMode className={css.icon} size={30}/>}
       </button>
+</div>
     </header>
   );
 };

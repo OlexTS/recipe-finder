@@ -10,7 +10,7 @@ import Container from "./Container/Container";
 function App() {
   return (
     <Container>
-      <h1>My Recipes</h1>
+      {/* <h1>My Recipes</h1> */}
     <Header/>
       <Routes>
         <Route path="/" element={<HomePage />} />
