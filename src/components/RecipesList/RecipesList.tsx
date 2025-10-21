@@ -25,7 +25,7 @@ const RecipesList = ({ recipes }: RecipesListProps) => {
     <ul className={css.list}>
       {recipes.map((recipe) => (
         <li key={recipe.id}>
-          <h2>{recipe.title}</h2>
+          <h2 className={css.title}>{recipe.title}</h2>
           <img
             src={recipe.image && recipe.imageType ? recipe.image : defaultImage}
             width={320}
