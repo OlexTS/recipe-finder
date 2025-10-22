@@ -46,7 +46,7 @@ export const fetchRandomRecipes = async (
 export const fetchRecipesByQuery = async (
   query: string,
   page: number = 1,
-  pageSize: number = 10,
+  pageSize: number = 12,
   filters: {
     type?: string,
     maxReadyTime?: number,
