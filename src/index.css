@@ -3,13 +3,44 @@
 *::after {
   box-sizing: border-box;
 }
+:root {
+  --color-bg: #ffffff;
+  --color-text: #213547;
+  --color-primary: #646cff;
+  --color-primary-hover: #535bf2;
+}
+body {
+  transition: var(--transition-delay);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
 
-body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, blockquote {
+[data-theme="dark"] {
+  --color-bg: #121212;
+  --color-text: #ffffff;
+  --color-primary: #8b8eff;
+  --color-primary-hover: #b2b5ff;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+blockquote {
   margin: 0;
   padding: 0;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -18,7 +49,10 @@ a {
   color: inherit;
 }
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font: inherit;
   background: none;
   border: none;

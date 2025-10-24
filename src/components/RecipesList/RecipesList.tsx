@@ -34,7 +34,7 @@ const RecipesList = ({ recipes }: RecipesListProps) => {
           <p>Ready in minutes: {recipe.readyInMinutes}</p>
           <p>Servings: {recipe.servings}</p>
           <ul>
-            Dish types:
+            <p>Dish types:</p>
             {recipe.dishTypes.map((dishtype: string, idx) => (
               <li key={idx}>
                 <p>{dishtype}</p>
