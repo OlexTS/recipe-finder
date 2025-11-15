@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
+import { Link } from "react-router";
 import type { Recipe } from "../../types/recipe";
 import Modal from "../Modal/Modal";
 import RecipesItem from "../RecipesItem/RecipesItem";
 import css from "./RecipesList.module.css";
 import defaultImage from "../../assets/noimage.jpg";
 import { useFavorites } from "../../helpers/useFavorites";
-import { Link } from "react-router";
 
 interface RecipesListProps {
   recipes: Recipe[];

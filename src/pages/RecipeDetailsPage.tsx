@@ -23,7 +23,7 @@ const RecipeDetailsPage = () => {
     <div>
       <RecipesItem recipeId={isAsNumber} />
       <button type="button" onClick={() => handleShare(isAsNumber)}>
-        <FaShareAlt />
+        <FaShareAlt className=" themed-icon"/>
       </button>
     </div>
   );

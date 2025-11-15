@@ -21,7 +21,9 @@ body {
   --color-primary: #8b8eff;
   --color-primary-hover: #b2b5ff;
 }
-
+[data-theme="dark"] .themed-icon {
+  filter: invert(1) brightness(1.3);
+}
 body,
 h1,
 h2,

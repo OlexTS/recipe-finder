@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import css from "./RecipesItem.module.css";
 import defaultImage from "../../assets/noimage.jpg";
 import { useNavigate } from "react-router";
+import { IoArrowBackCircle } from "react-icons/io5";
 
 interface RecipesItemProps {
   recipeId: number;
@@ -57,7 +58,7 @@ const RecipesItem = ({ recipeId }: RecipesItemProps) => {
         </ul>
       </div>
       <button type="button" onClick={() => navigate(-1)}>
-        Go back
+        <IoArrowBackCircle className="themed-icon" size={30}/>
       </button>
     </div>
   );
