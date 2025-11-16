@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { useEffect, useState } from "react";
 import css from "./Header.module.css";
-import logo from "../../assets/logo_white_bg.svg";
+import logo from "../../assets/logo-Picsart-BackgroundRemover.png";
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
 
