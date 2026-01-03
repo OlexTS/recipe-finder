@@ -22,15 +22,15 @@ const RecipesItem = ({ recipeId }: RecipesItemProps) => {
 
   return (
     <div className={css.container}>
-      <div>
-        <h2>{data.title}</h2>
-        <img
+      <div className={css.media}>
+        <h2 className={css.title}>{data.title}</h2>
+        <img className={css.image}
           src={data.image && data.imageType ? data.image : defaultImage}
           alt={data.title}
           width={320}
         />
       </div>
-      <div>
+      <div className={css.content}>
         <h3>Ingredients: </h3>
         <ul>
           {data.extendedIngredients?.map((ing) => (
@@ -44,7 +44,7 @@ const RecipesItem = ({ recipeId }: RecipesItemProps) => {
           ))}
         </ol>
         <h3>Nutrition: </h3>
-        <ul>
+        <ul className={css.nutrition}>
           {data?.nutrition?.nutrients
             ?.filter((el) =>
               ["Protein", "Fat", "Carbohydrates"].includes(el.name)
@@ -57,7 +57,7 @@ const RecipesItem = ({ recipeId }: RecipesItemProps) => {
             ))}
         </ul>
       </div>
-      <button type="button" onClick={() => navigate(-1)}>
+      <button className={css.backBtn} type="button" onClick={() => navigate(-1)}>
         <IoArrowBackCircle className="themed-icon" size={30}/>
       </button>
     </div>
