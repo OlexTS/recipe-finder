@@ -22,7 +22,7 @@
 
 .backBtn {
   grid-area: back;
-  justify-self: center;
+  justify-self: start;
 }
 
 .image {
@@ -31,17 +31,20 @@
   border-radius: 12px;
   margin-top: 10px;
 }
-
+.nutrition > li {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 10px;
+}
 @media (min-width: 768px) {
   .container {
-    grid-template-columns: 1fr 2fr;
-    grid-template-areas: 
-    "back back"
-    "media content"
-    ;
+    grid-template-columns: 320px 1fr;
+    grid-template-areas:
+      "back back"
+      "media content";
     gap: 32px;
   }
-  .backBtn{
+  .backBtn {
     justify-self: start;
   }
   .media {
@@ -49,12 +52,12 @@
   }
 }
 
-@media (min-width: 1200px){
-    .container{
-        grid-template-columns: 420px 1fr;
-        gap: 40px;
-    }
-    .image{
-        max-width: 400px;
-    }
+@media (min-width: 1200px) {
+  .container {
+    grid-template-columns: 420px 1fr;
+    gap: 40px;
+  }
+  .image {
+    max-width: 400px;
+  }
 }

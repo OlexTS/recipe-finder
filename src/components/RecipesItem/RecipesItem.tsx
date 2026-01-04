@@ -50,7 +50,7 @@ const RecipesItem = ({ recipeId }: RecipesItemProps) => {
               ["Protein", "Fat", "Carbohydrates"].includes(el.name)
             )
             .map((nt, idx) => (
-              <li key={idx}>
+              <li key={idx} >
                 <p>{nt.name}</p>
                 {nt.amount} {nt.unit}
               </li>
