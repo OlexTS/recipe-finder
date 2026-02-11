@@ -1,8 +1,6 @@
-
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import { Link } from "react-router";
 import type { Recipe } from "../../types/recipe";
-
 
 import css from "./RecipesList.module.css";
 import defaultImage from "../../assets/noimage.jpg";
@@ -12,10 +10,8 @@ interface RecipesListProps {
   recipes: Recipe[];
 }
 const RecipesList = ({ recipes }: RecipesListProps) => {
- 
   const { addFavorite, removeFromFavorite, isFavorite } = useFavorites();
 
- 
   return (
     <ul className={css.list}>
       {recipes.map((recipe) => (
@@ -36,9 +32,9 @@ const RecipesList = ({ recipes }: RecipesListProps) => {
               </li>
             ))}
           </ul>
-          
-            <Link to={`/recipes/${recipe.id}`}>View details</Link>
-          
+
+          <Link to={`/recipes/${recipe.id}`}>View details</Link>
+
           <button
             type="button"
             onClick={() => {
@@ -51,7 +47,6 @@ const RecipesList = ({ recipes }: RecipesListProps) => {
           >
             {isFavorite(recipe.id) ? <MdFavorite /> : <MdFavoriteBorder />}
           </button>
-          
         </li>
       ))}
     </ul>
