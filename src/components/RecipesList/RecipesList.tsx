@@ -1,9 +1,9 @@
-import { useState } from "react";
+
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import { Link } from "react-router";
 import type { Recipe } from "../../types/recipe";
-import Modal from "../Modal/Modal";
-import RecipesItem from "../RecipesItem/RecipesItem";
+
+
 import css from "./RecipesList.module.css";
 import defaultImage from "../../assets/noimage.jpg";
 import { useFavorites } from "../../helpers/useFavorites";
@@ -12,15 +12,10 @@ interface RecipesListProps {
   recipes: Recipe[];
 }
 const RecipesList = ({ recipes }: RecipesListProps) => {
-  const [selectedRecipeId, setSelectedRecipeId] = useState<number | null>(null);
+ 
   const { addFavorite, removeFromFavorite, isFavorite } = useFavorites();
 
-  const handleModalOpen = (id: number) => {
-    setSelectedRecipeId(id);
-  };
-  const handleModalClose = () => {
-    setSelectedRecipeId(null);
-  };
+ 
   return (
     <ul className={css.list}>
       {recipes.map((recipe) => (
@@ -41,9 +36,9 @@ const RecipesList = ({ recipes }: RecipesListProps) => {
               </li>
             ))}
           </ul>
-          <button type="button" onClick={() => handleModalOpen(recipe.id)}>
+          
             <Link to={`/recipes/${recipe.id}`}>View details</Link>
-          </button>
+          
           <button
             type="button"
             onClick={() => {
@@ -56,11 +51,7 @@ const RecipesList = ({ recipes }: RecipesListProps) => {
           >
             {isFavorite(recipe.id) ? <MdFavorite /> : <MdFavoriteBorder />}
           </button>
-          {selectedRecipeId && (
-            <Modal onClose={handleModalClose}>
-              <RecipesItem recipeId={selectedRecipeId} />
-            </Modal>
-          )}
+          
         </li>
       ))}
     </ul>
