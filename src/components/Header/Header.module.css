@@ -17,7 +17,8 @@
   max-width: 80px;
   transition: all var(--transition-delay);
 }
-.logo:hover, .logo:focus  {
+.logo:hover,
+.logo:focus {
   transform: scale(1.2);
 }
 
@@ -29,21 +30,20 @@
   font-size: 16px;
   font-weight: 500;
   transition: all var(--transition-delay);
-
 }
 .link:hover,
 .link:focus {
   color: var(--color-primary-hover);
-
 }
 .btn {
   display: flex;
   justify-content: center;
 }
-.icon{
-transition: all var(--transition-delay);
+.icon {
+  transition: all var(--transition-delay);
 }
-.icon:hover, .icon:focus {
+.icon:hover,
+.icon:focus {
   transform: scale(1.2);
 }
 @media (min-width: 768px) {
@@ -62,7 +62,7 @@ transition: all var(--transition-delay);
     display: flex;
     gap: 20px;
   }
-  .link{
+  .link {
     font-size: 18px;
   }
   .logo {
@@ -71,10 +71,10 @@ transition: all var(--transition-delay);
 }
 
 @media (min-width: 1200px) {
-    .navContainer {
-  gap: 20px;
-}
-  .link{
+  .navContainer {
+    gap: 20px;
+  }
+  .link {
     font-size: 18px;
   }
   .logo {

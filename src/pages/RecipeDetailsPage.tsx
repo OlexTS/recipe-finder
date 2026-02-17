@@ -22,8 +22,18 @@ const RecipeDetailsPage = () => {
   return (
     <div>
       <RecipesItem recipeId={isAsNumber} />
-      <button type="button" onClick={() => handleShare(isAsNumber)}>
-        <FaShareAlt className=" themed-icon"/>
+      <button
+        type="button"
+        onClick={() => handleShare(isAsNumber)}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "10px",
+          paddingLeft: "15px",
+        }}
+      >
+        <FaShareAlt className=" themed-icon" /> Share recipe
       </button>
     </div>
   );

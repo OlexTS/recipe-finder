@@ -3,7 +3,7 @@
   grid-template-columns: 1fr;
   gap: 20px;
   padding: 20px;
-    margin: 0 auto;
+  margin: 0 auto;
   /* max-width: 480px; */
   justify-items: center;
 }
@@ -64,7 +64,6 @@
 .list button:hover {
   background-color: #e2e2e2;
 }
-
 
 @media (min-width: 768px) {
   .list {

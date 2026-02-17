@@ -26,7 +26,7 @@ export interface SearchRecipeHttpResponse {
 }
 
 export const fetchRandomRecipes = async (
-  count: number
+  count: number,
 ): Promise<{ recipes: Recipe[]; totalResults: number }> => {
   try {
     const { data } = await recipeApi.get<RandomRecipeHttpResponse>("random", {
@@ -48,33 +48,40 @@ export const fetchRecipesByQuery = async (
   page: number = 1,
   pageSize: number = 12,
   filters: {
-    type?: string,
-    maxReadyTime?: number,
-    diet?: string,
-    sort?: string
-  }
+    type?: string;
+    maxReadyTime?: number;
+    diet?: string;
+    sort?: string;
+  },
 ): Promise<{ recipes: Recipe[]; totalResults: number }> => {
   const offset = (page - 1) * pageSize;
-  
+
   const { data } = await recipeApi.get<SearchRecipeHttpResponse>(
     "complexSearch",
     {
-      params: { query, offset, number: pageSize, addRecipeInformation: true, addRecipeNutrition: true, ...filters },
-    }
+      params: {
+        query,
+        offset,
+        number: pageSize,
+        addRecipeInformation: true,
+        addRecipeNutrition: true,
+        ...filters,
+      },
+    },
   );
   return { recipes: data.results, totalResults: data.totalResults };
 };
 
 export const fetchRecipeById = async (id: number): Promise<Recipe> => {
-  const { data } = await recipeApi.get(`${id}/information?includeNutrition=true`);
+  const { data } = await recipeApi.get(
+    `${id}/information?includeNutrition=true`,
+  );
   return data;
 };
 
-export const fetchAuthocomplete = async (query: string)=> {
-  const {data} = await recipeApi.get('autocomplete', 
-    {
-      params: {query, number: 5}
-    }
-  )
-return data as {id: number, title: string}[]
-}
+export const fetchAuthocomplete = async (query: string) => {
+  const { data } = await recipeApi.get("autocomplete", {
+    params: { query, number: 5 },
+  });
+  return data as { id: number; title: string }[];
+};

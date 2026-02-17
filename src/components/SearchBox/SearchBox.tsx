@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { fetchAuthocomplete } from "../../services/recipeService";
 import { useDebounce } from "use-debounce";
-import css from './SearchBox.module.css';
+import css from "./SearchBox.module.css";
 
 interface SearchBoxProps {
   onSubmit: (query: string) => void;
@@ -24,7 +24,6 @@ const SearchBox = ({ onSubmit }: SearchBoxProps) => {
     e.preventDefault();
     onSubmit(inputValue.trim());
     setShowSuggestions(false);
-    
   };
 
   const handleSelect = (title: string) => {
@@ -34,13 +33,14 @@ const SearchBox = ({ onSubmit }: SearchBoxProps) => {
   };
   return (
     <form
-    className={css.form}
+      className={css.form}
       onSubmit={handleSubmit}
       style={{ position: "relative" }}
       onFocus={() => setShowSuggestions(true)}
     >
-      <input className={css.input}
-      id="search"
+      <input
+        className={css.input}
+        id="search"
         type="text"
         value={inputValue}
         onChange={(e) => {
@@ -49,7 +49,9 @@ const SearchBox = ({ onSubmit }: SearchBoxProps) => {
         }}
         placeholder="Enter recipe"
       />
-      <button className={css.button} type="submit">Search</button>
+      <button className={css.button} type="submit">
+        Search
+      </button>
 
       {showSuggestions && suggestions.length > 0 && (
         <ul
@@ -70,7 +72,10 @@ const SearchBox = ({ onSubmit }: SearchBoxProps) => {
             <li
               key={s.id}
               style={{ padding: "8px", cursor: "pointer" }}
-              onClick={() => {handleSelect(s.title); setInputValue('')}}
+              onClick={() => {
+                handleSelect(s.title);
+                setInputValue("");
+              }}
             >
               {s.title}
             </li>

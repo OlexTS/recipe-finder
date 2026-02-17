@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 
 export const FavoritesProvider = ({ children }: { children: ReactNode }) => {
   const [favorites, setFavorites] = useState<Recipe[]>([]);
-  
+
   useEffect(() => {
     const saved = localStorage.getItem("favorites");
     if (saved) {
@@ -32,7 +32,7 @@ export const FavoritesProvider = ({ children }: { children: ReactNode }) => {
     });
   };
   const removeFromFavorite: FavoritesContextType["removeFromFavorite"] = (
-    id: number
+    id: number,
   ) => {
     setFavorites((prev) => {
       const updated = prev.filter((r) => r.id !== id);

@@ -6,12 +6,10 @@ import RecipeDetailsPage from "../pages/RecipeDetailsPage";
 import Header from "./Header/Header";
 import Container from "./Container/Container";
 
-
 function App() {
   return (
     <Container>
-      {/* <h1>My Recipes</h1> */}
-    <Header/>
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/favorite" element={<FavoritePage />} />

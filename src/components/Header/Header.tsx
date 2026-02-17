@@ -34,11 +34,18 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <button onClick={() => setIsDark((prev) => !prev)} className={css.btn}  aria-label="Toggle theme">
+        <button
+          onClick={() => setIsDark((prev) => !prev)}
+          className={css.btn}
+          aria-label="Toggle theme"
+        >
           {isDark ? (
             <MdDarkMode className={`${css.icon} themed-icon`} size={30} />
           ) : (
-            <MdOutlineLightMode className={`${css.icon} themed-icon`} size={30} />
+            <MdOutlineLightMode
+              className={`${css.icon} themed-icon`}
+              size={30}
+            />
           )}
         </button>
       </div>
